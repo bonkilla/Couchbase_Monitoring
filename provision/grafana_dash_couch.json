@@ -1,0 +1,2873 @@
+{
+   "annotations": {
+     "list": [
+       {
+         "builtIn": 1,
+         "datasource": "-- Grafana --",
+         "enable": true,
+         "hide": true,
+         "iconColor": "rgba(0, 211, 255, 1)",
+         "name": "Annotations & Alerts",
+         "type": "dashboard"
+       }
+     ]
+   },
+   "description": "Couchbase 5+ dashboard, created for totvslabs/couchbase-exporter",
+   "editable": false,
+   "gnetId": null,
+   "graphTooltip": 0,
+   "id": 1,
+   "iteration": 1574313049386,
+   "links": [],
+   "panels": [
+     {
+       "collapsed": false,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 0
+       },
+       "id": 31,
+       "panels": [],
+       "repeat": null,
+       "title": "General",
+       "type": "row"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": true,
+       "colorValue": false,
+       "colors": [
+         "#d44a3a",
+         "#d44a3a",
+         "#299c46"
+       ],
+       "datasource": "Prometheus",
+       "format": "none",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": false,
+         "thresholdLabels": false,
+         "thresholdMarkers": true
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 0,
+         "y": 1
+       },
+       "id": 2,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": false,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": false
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "couchbase_cluster_balanced{instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "0,1",
+       "title": "Balanced",
+       "type": "singlestat",
+       "valueFontSize": "200%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         },
+         {
+           "op": "=",
+           "text": "YES",
+           "value": "1"
+         },
+         {
+           "op": "=",
+           "text": "NO",
+           "value": "0"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": false,
+       "colorValue": false,
+       "colors": [
+         "#299c46",
+         "rgba(237, 129, 40, 0.89)",
+         "#d44a3a"
+       ],
+       "datasource": "Prometheus",
+       "decimals": 1,
+       "format": "percent",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": true,
+         "thresholdLabels": false,
+         "thresholdMarkers": false
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 4,
+         "y": 1
+       },
+       "id": 3,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": false,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": false
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "couchbase_task_rebalance_progress{instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "",
+       "title": "Rebalance Progress",
+       "type": "singlestat",
+       "valueFontSize": "80%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         },
+         {
+           "op": "=",
+           "text": "OK",
+           "value": "0"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": false,
+       "colorValue": false,
+       "colors": [
+         "#299c46",
+         "rgba(237, 129, 40, 0.89)",
+         "#d44a3a"
+       ],
+       "datasource": "Prometheus",
+       "decimals": 1,
+       "format": "percent",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": true,
+         "thresholdLabels": false,
+         "thresholdMarkers": false
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 8,
+         "y": 1
+       },
+       "id": 4,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": false,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": false
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "avg(couchbase_task_compacting_progress{instance=~\"$instance\"})",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "",
+       "title": "Compacting Progress",
+       "type": "singlestat",
+       "valueFontSize": "80%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         },
+         {
+           "op": "=",
+           "text": "OK",
+           "value": "0"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": false,
+       "colorValue": false,
+       "colors": [
+         "#299c46",
+         "rgba(237, 129, 40, 0.89)",
+         "#d44a3a"
+       ],
+       "datasource": "Prometheus",
+       "decimals": 1,
+       "format": "percent",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": true,
+         "thresholdLabels": false,
+         "thresholdMarkers": true
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 12,
+         "y": 1
+       },
+       "id": 5,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": false,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": false
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "avg(100 * (sum by (bucket) (couchbase_bucket_basicstats_memused_bytes{bucket=~\"$bucket\",instance=~\"$instance\"})) / sum by (bucket) (couchbase_bucket_stats_ep_max_size_bytes{bucket=~\"$bucket\",instance=~\"$instance\"}))",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "70,90",
+       "title": "Bucket RAM Usage",
+       "type": "singlestat",
+       "valueFontSize": "80%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": false,
+       "colorValue": false,
+       "colors": [
+         "#299c46",
+         "rgba(237, 129, 40, 0.89)",
+         "#d44a3a"
+       ],
+       "datasource": "Prometheus",
+       "format": "none",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": false,
+         "thresholdLabels": false,
+         "thresholdMarkers": true
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 16,
+         "y": 1
+       },
+       "id": 6,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": true,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": true
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "count(couchbase_node_healthy{instance=~\"$instance\"})",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "",
+       "title": "Server Count",
+       "type": "singlestat",
+       "valueFontSize": "200%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "cacheTimeout": null,
+       "colorBackground": true,
+       "colorValue": false,
+       "colors": [
+         "#299c46",
+         "#299c46",
+         "#d44a3a"
+       ],
+       "datasource": "Prometheus",
+       "format": "none",
+       "gauge": {
+         "maxValue": 100,
+         "minValue": 0,
+         "show": false,
+         "thresholdLabels": false,
+         "thresholdMarkers": true
+       },
+       "gridPos": {
+         "h": 7,
+         "w": 4,
+         "x": 20,
+         "y": 1
+       },
+       "id": 7,
+       "interval": null,
+       "links": [],
+       "mappingType": 1,
+       "mappingTypes": [
+         {
+           "name": "value to text",
+           "value": 1
+         },
+         {
+           "name": "range to text",
+           "value": 2
+         }
+       ],
+       "maxDataPoints": 100,
+       "nullPointMode": "connected",
+       "nullText": null,
+       "options": {},
+       "postfix": "",
+       "postfixFontSize": "50%",
+       "prefix": "",
+       "prefixFontSize": "50%",
+       "rangeMaps": [
+         {
+           "from": "null",
+           "text": "N/A",
+           "to": "null"
+         }
+       ],
+       "sparkline": {
+         "fillColor": "rgba(31, 118, 189, 0.18)",
+         "full": false,
+         "lineColor": "rgb(31, 120, 193)",
+         "show": false
+       },
+       "tableColumn": "",
+       "targets": [
+         {
+           "expr": "count(couchbase_node_healthy{instance=~\"$instance\"} == 0) or (1-absent(couchbase_node_healthy{instance=~\"$instance\"} == 0))",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "",
+           "refId": "A"
+         }
+       ],
+       "thresholds": "0,1",
+       "title": "Unhealthy Server Count",
+       "type": "singlestat",
+       "valueFontSize": "200%",
+       "valueMaps": [
+         {
+           "op": "=",
+           "text": "N/A",
+           "value": "null"
+         }
+       ],
+       "valueName": "current"
+     },
+     {
+       "collapsed": false,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 8
+       },
+       "id": 32,
+       "panels": [],
+       "repeat": null,
+       "title": "Details",
+       "type": "row"
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "fillGradient": 0,
+       "gridPos": {
+         "h": 7,
+         "w": 24,
+         "x": 0,
+         "y": 9
+       },
+       "id": 8,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {
+         "dataLinks": []
+       },
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "sum by (bucket) (couchbase_bucket_stats_cmd_set{bucket=~\"$bucket\",instance=~\"$instance\"}) + sum by (bucket) (couchbase_bucket_stats_cmd_get{bucket=~\"$bucket\",instance=~\"$instance\"})",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeRegions": [],
+       "timeShift": null,
+       "title": "QPS",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         }
+       ],
+       "yaxis": {
+         "align": false,
+         "alignLevel": null
+       }
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "fillGradient": 0,
+       "gridPos": {
+         "h": 7,
+         "w": 24,
+         "x": 0,
+         "y": 16
+       },
+       "id": 9,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {
+         "dataLinks": []
+       },
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_ep_cache_miss_rate{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeRegions": [],
+       "timeShift": null,
+       "title": "Cache Miss Rate",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "percent",
+           "label": null,
+           "logBase": 1,
+           "max": 100,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "percent",
+           "label": null,
+           "logBase": 1,
+           "max": 100,
+           "min": 0,
+           "show": true
+         }
+       ],
+       "yaxis": {
+         "align": false,
+         "alignLevel": null
+       }
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "fillGradient": 0,
+       "gridPos": {
+         "h": 7,
+         "w": 12,
+         "x": 0,
+         "y": 23
+       },
+       "id": 10,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {
+         "dataLinks": []
+       },
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_curr_connections{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeRegions": [],
+       "timeShift": null,
+       "title": "Connections",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         }
+       ],
+       "yaxis": {
+         "align": false,
+         "alignLevel": null
+       }
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "fillGradient": 0,
+       "gridPos": {
+         "h": 7,
+         "w": 12,
+         "x": 12,
+         "y": 23
+       },
+       "id": 11,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {
+         "dataLinks": []
+       },
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_curr_items{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeRegions": [],
+       "timeShift": null,
+       "title": "Primary items total",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         }
+       ],
+       "yaxis": {
+         "align": false,
+         "alignLevel": null
+       }
+     },
+     {
+       "collapsed": false,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 30
+       },
+       "id": 33,
+       "panels": [],
+       "repeat": null,
+       "title": "Queries",
+       "type": "row"
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "gridPos": {
+         "h": 7,
+         "w": 24,
+         "x": 0,
+         "y": 31
+       },
+       "id": 12,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {},
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [
+         {
+           "alias": "/Sets/",
+           "transform": "negative-Y"
+         }
+       ],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_cmd_set{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "Sets on {{ bucket }}",
+           "refId": "A"
+         },
+         {
+           "expr": "couchbase_bucket_stats_cmd_get{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "Gets on {{ bucket }}",
+           "refId": "B"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeShift": null,
+       "title": "Gets / Sets",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": null,
+           "show": true
+         },
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": null,
+           "show": true
+         }
+       ]
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "gridPos": {
+         "h": 7,
+         "w": 12,
+         "x": 0,
+         "y": 38
+       },
+       "id": 13,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {},
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_evictions{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [],
+       "timeFrom": null,
+       "timeShift": null,
+       "title": "Evictions",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "short",
+           "label": null,
+           "logBase": 1,
+           "max": null,
+           "min": 0,
+           "show": true
+         }
+       ]
+     },
+     {
+       "aliasColors": {},
+       "bars": false,
+       "dashLength": 10,
+       "dashes": false,
+       "datasource": null,
+       "fill": 1,
+       "gridPos": {
+         "h": 7,
+         "w": 12,
+         "x": 12,
+         "y": 38
+       },
+       "id": 14,
+       "legend": {
+         "alignAsTable": true,
+         "avg": false,
+         "current": true,
+         "max": false,
+         "min": false,
+         "rightSide": true,
+         "show": true,
+         "sort": "current",
+         "sortDesc": true,
+         "total": false,
+         "values": true
+       },
+       "lines": true,
+       "linewidth": 1,
+       "links": [],
+       "nullPointMode": "null",
+       "options": {},
+       "percentage": false,
+       "pointradius": 5,
+       "points": false,
+       "renderer": "flot",
+       "repeat": null,
+       "seriesOverrides": [],
+       "spaceLength": 10,
+       "stack": false,
+       "steppedLine": false,
+       "targets": [
+         {
+           "expr": "couchbase_bucket_stats_vbuckets_active_resident_items_ratio{bucket=~\"$bucket\",instance=~\"$instance\"}",
+           "format": "time_series",
+           "intervalFactor": 2,
+           "legendFormat": "{{ bucket }}",
+           "refId": "A"
+         }
+       ],
+       "thresholds": [
+         {
+           "colorMode": "critical",
+           "fill": true,
+           "line": true,
+           "op": "lt",
+           "value": 20,
+           "yaxis": "left"
+         }
+       ],
+       "timeFrom": null,
+       "timeShift": null,
+       "title": "Resident Ratio",
+       "tooltip": {
+         "shared": true,
+         "sort": 0,
+         "value_type": "individual"
+       },
+       "type": "graph",
+       "xaxis": {
+         "buckets": null,
+         "mode": "time",
+         "name": null,
+         "show": true,
+         "values": []
+       },
+       "yaxes": [
+         {
+           "format": "percent",
+           "label": null,
+           "logBase": 1,
+           "max": 100,
+           "min": 0,
+           "show": true
+         },
+         {
+           "format": "percent",
+           "label": null,
+           "logBase": 1,
+           "max": 100,
+           "min": 0,
+           "show": true
+         }
+       ]
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 45
+       },
+       "id": 34,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 46
+           },
+           "id": 15,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "100 * couchbase_bucket_basicstats_memused_bytes{bucket=~\"$bucket\",instance=~\"$instance\"} / couchbase_bucket_stats_ep_max_size_bytes",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [
+             {
+               "colorMode": "critical",
+               "fill": true,
+               "line": true,
+               "op": "gt",
+               "value": 90,
+               "yaxis": "left"
+             }
+           ],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Memory Used",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 0,
+             "y": 53
+           },
+           "id": 16,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_curr_items{bucket=~\"$bucket\",instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Items Count",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 12,
+             "y": 53
+           },
+           "id": 17,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "rate(couchbase_bucket_stats_ep_oom_errors{instance=\"$instance\", bucket=~\"$bucket\"}[5m])",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Hard Out of Memory Errors",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "Memory",
+       "type": "row"
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 46
+       },
+       "id": 35,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 0,
+             "y": 54
+           },
+           "id": 18,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_basicstats_diskfetches{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Disk Fetches",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 12,
+             "y": 54
+           },
+           "id": 19,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_disk_write_queue{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Disk Write Queue",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "Disk",
+       "type": "row"
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 47
+       },
+       "id": 36,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 0,
+             "y": 55
+           },
+           "id": 20,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_couch_docs_fragmentation{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Fragmentation",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 12,
+             "y": 55
+           },
+           "id": 21,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null as zero",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_task_compacting_progress{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Compaction Progress",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "Compacting",
+       "type": "row"
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 48
+       },
+       "id": 37,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 0,
+             "y": 56
+           },
+           "id": 22,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null as zero",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_task_rebalance_progress{instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ instance }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Rebalance Progress",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "percent",
+               "label": null,
+               "logBase": 1,
+               "max": 100,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 12,
+             "y": 56
+           },
+           "id": 23,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_replica_producers{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: DCP Senders",
+               "refId": "A"
+             },
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_replicas{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: DCP Connections",
+               "refId": "B"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "DCP Replication",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 63
+           },
+           "id": 24,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [
+             {
+               "alias": "/Remaining/",
+               "transform": "negative-Y"
+             }
+           ],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_replica_items_sent{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "Sent on {{ bucket }}",
+               "refId": "A"
+             },
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_replica_items_remaining{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "Remaining on {{ bucket }}",
+               "refId": "B"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Items Sent / Remaining",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 70
+           },
+           "id": 25,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_replica_total_bytes{instance=~\"$instance\", bucket=~\"$bucket\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Speed",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "Bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "Bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "Rebalance",
+       "type": "row"
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 49
+       },
+       "id": 38,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 71
+           },
+           "id": 26,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [
+             {
+               "alias": "/Remaining/",
+               "transform": "negative-Y"
+             }
+           ],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_items_remaining{bucket=~\"$bucket\",instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: Remaining",
+               "refId": "A"
+             },
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_items_sent{bucket=~\"$bucket\", instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: Sent",
+               "refId": "B"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Items Sent / Remaining",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 78
+           },
+           "id": 27,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_total_bytes{bucket=~\"$bucket\", instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Speed",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "Bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "Bps",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 0,
+             "y": 85
+           },
+           "id": 28,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_total_backlog_size{bucket=~\"$bucket\", instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}",
+               "refId": "A"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Backlog Size",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         },
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 12,
+             "x": 12,
+             "y": 85
+           },
+           "id": 29,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_connections{bucket=~\"$bucket\", instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: connections",
+               "refId": "A"
+             },
+             {
+               "expr": "couchbase_bucket_stats_ep_dcp_xdcr_producers{bucket=~\"$bucket\", instance=~\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "{{ bucket }}: producers",
+               "refId": "B"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "DCP",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             },
+             {
+               "format": "short",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": 0,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "XDCR",
+       "type": "row"
+     },
+     {
+       "collapsed": true,
+       "datasource": null,
+       "gridPos": {
+         "h": 1,
+         "w": 24,
+         "x": 0,
+         "y": 50
+       },
+       "id": 39,
+       "panels": [
+         {
+           "aliasColors": {},
+           "bars": false,
+           "dashLength": 10,
+           "dashes": false,
+           "datasource": null,
+           "fill": 1,
+           "gridPos": {
+             "h": 7,
+             "w": 24,
+             "x": 0,
+             "y": 86
+           },
+           "id": 30,
+           "legend": {
+             "alignAsTable": true,
+             "avg": false,
+             "current": true,
+             "max": false,
+             "min": false,
+             "rightSide": true,
+             "show": true,
+             "sort": "current",
+             "sortDesc": true,
+             "total": false,
+             "values": true
+           },
+           "lines": true,
+           "linewidth": 1,
+           "links": [],
+           "nullPointMode": "null",
+           "percentage": false,
+           "pointradius": 5,
+           "points": false,
+           "renderer": "flot",
+           "repeat": null,
+           "seriesOverrides": [],
+           "spaceLength": 10,
+           "stack": false,
+           "steppedLine": false,
+           "targets": [
+             {
+               "expr": "couchbase_cluster_scrape_duration_seconds{instance=\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "cluster",
+               "refId": "A"
+             },
+             {
+               "expr": "couchbase_bucket_scrape_duration_seconds{instance=\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "bucket",
+               "refId": "B"
+             },
+             {
+               "expr": "couchbase_node_scrape_duration_seconds{instance=\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "node",
+               "refId": "C"
+             },
+             {
+               "expr": "couchbase_task_scrape_duration_seconds{instance=\"$instance\"}",
+               "format": "time_series",
+               "intervalFactor": 2,
+               "legendFormat": "task",
+               "refId": "D"
+             }
+           ],
+           "thresholds": [],
+           "timeFrom": null,
+           "timeShift": null,
+           "title": "Scrape durations",
+           "tooltip": {
+             "shared": true,
+             "sort": 0,
+             "value_type": "individual"
+           },
+           "type": "graph",
+           "xaxis": {
+             "buckets": null,
+             "mode": "time",
+             "name": null,
+             "show": true,
+             "values": []
+           },
+           "yaxes": [
+             {
+               "format": "s",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             },
+             {
+               "format": "s",
+               "label": null,
+               "logBase": 1,
+               "max": null,
+               "min": null,
+               "show": true
+             }
+           ]
+         }
+       ],
+       "repeat": null,
+       "title": "Scrape times",
+       "type": "row"
+     }
+   ],
+   "refresh": "10s",
+   "schemaVersion": 20,
+   "style": "dark",
+   "tags": [
+     "couchbase"
+   ],
+   "templating": {
+     "list": [
+       {
+         "current": {
+           "text": "Prometheus",
+           "value": "Prometheus"
+         },
+         "hide": 1,
+         "includeAll": false,
+         "label": null,
+         "multi": false,
+         "name": "PROMETHEUS_DS",
+         "options": [],
+         "query": "prometheus",
+         "refresh": 1,
+         "regex": "",
+         "skipUrlSync": false,
+         "type": "datasource"
+       },
+       {
+         "allValue": null,
+         "current": {
+           "text": "ins-couch-test101.prod.hnd2.bdd.local:9420",
+           "value": "ins-couch-test101.prod.hnd2.bdd.local:9420"
+         },
+         "datasource": "$PROMETHEUS_DS",
+         "definition": "",
+         "hide": 0,
+         "includeAll": false,
+         "label": "Instance",
+         "multi": false,
+         "name": "instance",
+         "options": [],
+         "query": "label_values(couchbase_bucket_basicstats_dataused_bytes, instance)",
+         "refresh": 1,
+         "regex": "",
+         "skipUrlSync": false,
+         "sort": 0,
+         "tagValuesQuery": "",
+         "tags": [],
+         "tagsQuery": "",
+         "type": "query",
+         "useTags": false
+       },
+       {
+         "allValue": null,
+         "current": {
+           "text": "All",
+           "value": "$__all"
+         },
+         "datasource": "$PROMETHEUS_DS",
+         "definition": "",
+         "hide": 0,
+         "includeAll": true,
+         "label": "Bucket",
+         "multi": true,
+         "name": "bucket",
+         "options": [],
+         "query": "label_values(couchbase_bucket_basicstats_dataused_bytes{instance=\"$instance\"}, bucket)",
+         "refresh": 1,
+         "regex": "",
+         "skipUrlSync": false,
+         "sort": 0,
+         "tagValuesQuery": "",
+         "tags": [],
+         "tagsQuery": "",
+         "type": "query",
+         "useTags": false
+       }
+     ]
+   },
+   "time": {
+     "from": "now-1h",
+     "to": "now"
+   },
+   "timepicker": {
+     "refresh_intervals": [
+       "5s",
+       "10s",
+       "30s",
+       "1m",
+       "5m",
+       "15m",
+       "30m",
+       "1h",
+       "2h",
+       "1d"
+     ],
+     "time_options": [
+       "5m",
+       "15m",
+       "1h",
+       "6h",
+       "12h",
+       "24h",
+       "2d",
+       "7d",
+       "30d"
+     ]
+   },
+   "timezone": "browser",
+   "title": "Couchbase_test",
+   "uid": "TIG9rHxZz",
+   "version": 1
+ }
