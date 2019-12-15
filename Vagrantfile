@@ -1,7 +1,7 @@
 
 Vagrant.configure("2") do |config|
     # Disbled synced folder
-    config.vm.synced_folder "C:/Users/david.martinez/Documents/vagrantshare", "/vagrant_data"
+    #config.vm.synced_folder "C:/Users/david.martinez/Documents/vagrantshare", "/vagrant_data"
 
     # Enable hostnamager plugins to use hostname in Ansible inventory
     config.hostmanager.enabled = true
@@ -74,17 +74,17 @@ Vagrant.configure("2") do |config|
         centos7_prometheus.vm.provision "shell", inline: "wget https://github.com/prometheus/prometheus/releases/download/v2.14.0/prometheus-2.14.0.linux-amd64.tar.gz"
         centos7_prometheus.vm.provision "shell", inline: "tar xzvf prometheus-2.14.0.linux-amd64.tar.gz"        
         centos7_prometheus.vm.provision "shell", inline: "sudo rm -rf /home/vagrant/prometheus-2.14.0.linux-amd64/prometheus.yml"
-        config.vm.provision "file", source: "./prometheus_couchbase.yml", destination: "/home/vagrant/prometheus.yml"
+        config.vm.provision "file", source: "./provision/prometheus_couchbase.yml", destination: "/home/vagrant/prometheus.yml"
         centos7_prometheus.vm.provision "shell", inline: "sudo cp /home/vagrant/prometheus.yml /home/vagrant/prometheus-2.14.0.linux-amd64/prometheus.yml"
-        config.vm.provision "file", source: "./couchbase.rules.yml", destination: "/home/vagrant/couchbase.rules.yml"
+        config.vm.provision "file", source: "./provision/couchbase.rules.yml", destination: "/home/vagrant/couchbase.rules.yml"
         centos7_prometheus.vm.provision "shell", inline: "sudo cp /home/vagrant/couchbase.rules.yml /home/vagrant/prometheus-2.14.0.linux-amd64/couchbase.rules.yml"
         centos7_prometheus.vm.provision "shell", inline: "nohup sudo ./prometheus-2.14.0.linux-amd64/prometheus --config.file /home/vagrant/prometheus-2.14.0.linux-amd64/prometheus.yml 0<&- &>/dev/null &"        
-        config.vm.provision "file", source: "./grafana.repo", destination: "/home/vagrant/grafana.repo"
+        config.vm.provision "file", source: "./provision/grafana.repo", destination: "/home/vagrant/grafana.repo"
         centos7_prometheus.vm.provision "shell", inline: "sudo mv /home/vagrant/grafana.repo /etc/yum.repos.d/"
         centos7_prometheus.vm.provision "shell", inline: "sudo yum -y install grafana"
         centos7_prometheus.vm.provision "shell", inline: "sudo systemctl start grafana-server"
         centos7_prometheus.vm.provision "shell", inline: "sudo systemctl enable grafana-server.service"
-        config.vm.provision "file", source: "./prometheus_ds.json", destination: "/home/vagrant/prometheus_ds.json"
+        config.vm.provision "file", source: "./provision/prometheus_ds.json", destination: "/home/vagrant/prometheus_ds.json"
         centos7_prometheus.vm.provision "shell", inline: "curl -u admin:admin -H 'Content-Type: application/json;charset=UTF-8' 'http://localhost:3000/api/datasources/' -X POST --data-binary @/home/vagrant/prometheus_ds.json"        
 
 
@@ -92,7 +92,7 @@ Vagrant.configure("2") do |config|
         centos7_prometheus.vm.provision "shell", inline: "wget https://github.com/prometheus/alertmanager/releases/download/v0.19.0/alertmanager-0.19.0.linux-amd64.tar.gz"
         centos7_prometheus.vm.provision "shell", inline: "tar xzvf alertmanager-0.19.0.linux-amd64.tar.gz"
 
-        config.vm.provision "file", source: "C:/Users/david.martinez/Documents/vagrant_provision/alertmanager.yml", destination: "/home/vagrant/alertmanager.yml"
+        config.vm.provision "file", source: "./provision/alertmanager.yml", destination: "/home/vagrant/alertmanager.yml"
         centos7_prometheus.vm.provision "shell", inline: "sudo cp /home/vagrant/alertmanager.yml /home/vagrant/alertmanager-0.19.0.linux-amd64/alertmanager.yml"
         centos7_prometheus.vm.provision "shell", inline: "nohup sudo ./alertmanager-0.19.0.linux-amd64/alertmanager --config.file /home/vagrant/alertmanager-0.19.0.linux-amd64/alertmanager.yml 0<&- &>/dev/null &"
     end    
